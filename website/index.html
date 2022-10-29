@@ -10,6 +10,14 @@
     <link href="https://assets.pipal.in/fontawesome/5/css/all.css" rel="stylesheet" />
 
     <style>
+    /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+ */
+    body {
+      /* font-family: Rubik, sans-serif; */
+      /* font-size: 1.em; */
+    }
+
     .is-section {
       /* background: linear-gradient(to bottom,#fff,#f0f0f0) */
       /* border-bottom: 1px solid #eee; */
@@ -39,7 +47,19 @@
     .cover {
       float: right;
       padding: 10px;
+      max-width: 200px;
     }
+    .cover image {
+      max-width: 200px !important;
+    }
+
+
+    @media (max-width: 800px) {
+      .cover {
+        max-width: 50%;
+      }
+    }
+
     </style>
   </head>
 
@@ -62,7 +82,7 @@
                 <a class="navbar-item is-active" href="#overview">
                   Overview
                 </a>
-                <a class="navbar-item">
+                <a class="navbar-item" href="#target-audience">
                   Target Audience
                 </a>
                 <a class="navbar-item" href="#schedule">
@@ -76,13 +96,22 @@
 
       <div class="hero-body">
         <p class="title">The Lambda Retreat</p>
+        <!-- <p class="subtitle">A week long retreat away from the city, with a small group of passionate programmers, deep dive into computer science.</p> -->
         <p class="subtitle">Immerse into a week long exploration of functional programming, taking many diversions and strange loops!</p>
 
         <p class="subtitle">
           <i class="fas fa-calendar"></i> Dec 11-16, 2022
           <br>
           <i class="fas fa-map-marker-alt"></i> <a href="https://tvc.farm/">The Tamarind Valley Collective</a> (80 KM from Bangalore)
+          <br>
+          <i class="fas fa-rupee-sign"></i> 40,000/-
         </p>
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button class="button is-link js-modal-trigger" data-target="modal-register">Register</button>
+          </div>
+        </div>
 
         <!-- <p>
           <button class="button is-dark">Learn More!</button>
@@ -90,9 +119,55 @@
       </div>
     </section>
 
+    <div class="modal" id="modal-register">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Register: The Lambda Retreat (Dec 11-16)</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <p>Please provide your name and email address. You will be contacted to confirm details and arrange payment.</p>
+          <br>
+          <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+              <input class="input" type="text" name="full_name" placeholder="Full Name">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label">E-Mail</label>
+            <div class="control">
+              <input class="input" type="email" name="email" placeholder="E-Mail Address">
+            </div>
+          </div>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-primary button-register">Register</button>
+          <button class="button button-cancel">Cancel</button>
+        </footer>
+      </div>
+    </div>
+
+    <div class="modal" id="modal-success">
+      <div class="modal-card is-success">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Thank You!</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <p>Thank you for your interest. We'll get back to you shortly!</p>
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button button-cancel">Close</button>
+        </footer>
+      </div>
+    </div>
+
+
     <section class="hero is-section">
       <div class="hero-body">
-        <h2 class="title">Overview</h2>
+        <h2 class="title" id="overview">Overview</h2>
 
         <blockquote>
             <p>“My aim is to show that the heavenly machine is not a kind of divine, live being, but a kind of clockwork..."
@@ -101,7 +176,7 @@
         </blockquote>
 
         <div class="cover">
-          <img alt="SICP cover" src="images/sicp.jpg" width="200" />
+          <img alt="SICP cover" src="images/sicp.jpg" />
         </div>
 
         <p>
@@ -117,7 +192,7 @@
         </p>
 
         <p>
-        To make best use of the time at the retreat, a two week online sessions are planned before the retreat to get started and pick up a good pace, covering the initial topics of the book.
+        To make best use of the time at the retreat, online sessions for two weeks are planned before the retreat to get started and pick up a good pace, covering the initial topics of the book.
         </p>
 
         <p>
@@ -151,23 +226,40 @@
 
     <section class="hero is-section">
       <div class="hero-body">
-        <h2 class="title">Target Audience</h2>
+        <h2 class="title" id="target-audience">Target Audience</h2>
 
-        <blockquote>
-          <q>This is one of the great classics of computer science. I bought my first copy 15 years ago, and I still don’t feel I have learned everything the book has to teach."
-          </q>
-          <p>&mdash; Johannes Kepler (letter to Herwart von Hohenburg, 1605)</p>
-      </blockquote>
+        <p>This course is for experienced programmers who looking for
+          deeper insights about building software systems. If you are
+          someone passionate about programming and would like to understand
+          things from the first principes, you would love this course.
+        </p>
 
-    </div>
+        <ul>
+          <li>Experienced programmers looking for deeper insights into building software systems</li>
+          <li>Passionate programmers looking for building something challenging</li>
+          <li>Functional programming enthusiasts who would like to</li>
+        </ul>
+
+      </div>
     </section>
+
+    <section class="hero is-section">
+      <div class="hero-body">
+        <h2 class="title">Prerequisites</h2>
+
+        <p>This course requires strong programming experience. You should be comfortable to write recursive functions and working with recursive data structures.</p>
+
+        <p>Prior experience with functional programming language is be useful to have, but not required.</p>
+      </div>
+    </section>
+
 
     <section class="hero is-section">
       <div class="hero-body">
         <h2 class="title" id="schedule">Schedule</h2>
 
-        <h4 class="title is-4">Warm Up</h4>
-        <div class="subtitle"><em>Nov 28 - Dec 09, 2022 &mdash; online</em></div>
+        <h4 class="title is-4">Online Sessions</h4>
+        <div class="subtitle"><em>Nov 28 - Dec 09, 2022</em></div>
 
         <p>We'll use the two weeks before the main course to warm up, covering
         almost the first two chapters of SICP.
@@ -230,10 +322,108 @@
       <div class="hero-body">
         <h2 class="title">The Instructor</h2>
 
-        <p>This course is led by Anand Chitipothu.</p>
+        <p>This course is led by <a href="https://anandology.com/">Anand Chitipothu</a>.</p>
 
-        <p>Anand started his career with writing a garbage collector for an implementation of scheme and the spirit of SICP stayed with him ever since.</p>
+        <figure class="image is-128x128" style="float: right; margin: 0px 10px;">
+          <img class="is-rounded" src="images/anand.jpeg">
+        </figure>
+
+        <p>
+          Anand started his career with writing a garbage collector
+          for an implementation of scheme and the spirit of SICP stayed
+          with him ever since.
+        </p>
+
+        <p>As someone who loves simplicity and likes to approach things
+          from first principles, he was naturally attracted to ideas of
+          functional programming. Some of his works include a Python to
+          Javascript translator, a python 3 interpreter in Racket,
+          exploring Escher's tessallations with code, among many others.
+        </p>
+
+        <p>Over his long career, spanning over two decades, he
+          co-authored web.py - a micro web framework in Python,
+          built Open Library at the Internet Archive, created Joy -
+          a creative coding library in Python,
+          trained hundreds of engineers through his deep-dive courses.
+        </p>
       </div>
     </section>
+
+    <script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  // Functions to open and close a modal
+  function openModal($el) {
+    $el.classList.add('is-active');
+  }
+
+  function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+      closeModal($modal);
+    });
+  }
+
+  // Add a click event on buttons to open a specific modal
+  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener('click', () => {
+      openModal($target);
+    });
+  });
+
+  // Add a click event on various child elements to close the parent modal
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button-cancel') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  (document.querySelectorAll('.modal-card-foot .button-register') || []).forEach(($btn) => {
+    const $target = $btn.closest('.modal');
+    const $full_name = document.querySelector("#modal-register input[name=full_name]");
+    const $email = document.querySelector("#modal-register input[name=email]");
+
+    $btn.addEventListener('click', () => {
+      closeModal($target);
+
+      var data = {
+        full_name: $full_name.value,
+        email: $email.value,
+      };
+
+      fetch("https://engage.pipal.in/api/method/lambda-retreat-register", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {"Content-Type": "application/json"}
+      })
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+        if (response.message.ok) {
+          document.querySelector("#modal-success").classList.add("is-active");
+        }
+      });
+    });
+  });
+
+
+  // Add a keyboard event to close all modals
+  document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+      closeAllModals();
+    }
+  });
+});
+    </script>
   </body>
 </html>
