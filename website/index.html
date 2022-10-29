@@ -13,6 +13,7 @@
     /* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
  */
+
     body {
       /* font-family: Rubik, sans-serif; */
       /* font-size: 1.em; */
@@ -88,6 +89,9 @@
                 <a class="navbar-item" href="#schedule">
                   Schedule
                 </a>
+                <a class="navbar-item" href="#instructor">
+                  The Instructor
+                </a>
               </div>
             </div>
           </div>
@@ -123,7 +127,7 @@
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
-          <p class="modal-card-title">Register: The Lambda Retreat (Dec 11-16)</p>
+          <p class="modal-card-title">Register</p>
           <button class="delete" aria-label="close"></button>
         </header>
         <section class="modal-card-body">
@@ -249,7 +253,7 @@
 
         <p>This course requires strong programming experience. You should be comfortable to write recursive functions and working with recursive data structures.</p>
 
-        <p>Prior experience with functional programming language is be useful to have, but not required.</p>
+        <p>Prior experience with any functional programming language is be useful to have, but not required.</p>
       </div>
     </section>
 
@@ -320,7 +324,7 @@
 
     <section class="hero is-section">
       <div class="hero-body">
-        <h2 class="title">The Instructor</h2>
+        <h2 class="title" id="instructor">The Instructor</h2>
 
         <p>This course is led by <a href="https://anandology.com/">Anand Chitipothu</a>.</p>
 
@@ -352,6 +356,25 @@
 
     <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Get all "navbar-burger" elements
+  const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+  // Add a click event on each of them
+  $navbarBurgers.forEach( el => {
+    el.addEventListener('click', () => {
+
+      // Get the target from the "data-target" attribute
+      const target = el.dataset.target;
+      const $target = document.getElementById(target);
+
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      el.classList.toggle('is-active');
+      $target.classList.toggle('is-active');
+
+    });
+  });
+
   // Functions to open and close a modal
   function openModal($el) {
     $el.classList.add('is-active');
