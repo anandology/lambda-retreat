@@ -65,6 +65,21 @@ In scheme comments starts with `;` character.
 (+ 1 2 3 4 5)
 ```
 
+### Display
+
+This environment displays the value of the last expression in the code when we run it. However, it is also possible to explicity display something using the `display` and `newline` functions.
+
+```{.scheme .feather}
+(display 1)
+(newline)
+
+(display 2)
+(newline)
+
+(display 3)
+(newline)
+```
+
 ## The Elements of Programming
 
 According to SICP, every language provides means for combining simple ideas to form more complex ones and every powerful language has three mechanisms for accomplishing this:
@@ -131,6 +146,15 @@ Once we define a variable, we can use it in other expressions.
 (+ size 3)
 ```
 
+One interesting thing about scheme is that it allows characters like -, ? etc. in the names, making it lot more readable.
+
+```{.scheme .feather}
+(define line-count 5)
+(define even-number? 0)
+```
+
+Usually, the names ending with a `?` are used to define predicate functions, the functions that return true or false. We'll see them in the latter sections.
+
 ## Functions
 
 Functions, also called as Procedures in Scheme and SICP are specified using the `define` construct.
@@ -151,8 +175,124 @@ Functions, also called as Procedures in Scheme and SICP are specified using the 
 (cube 3)
 ```
 
-## Condtional Expressions
+## Condtional Expressions and Predicates
 
+Scheme has boolean values `#t` and `#f` for _true_ and _false_.
 
+A boolean expression or a _predicate_, is an expression that result in boolean value. All the conditional operators can be used to construct a predicate.
 
-## Conditional Expressions
+```{.scheme .feather}
+(> 10 5)
+```
+
+```{.scheme .feather}
+(> 10 50)
+```
+
+Conditional expressions in scheme can be written using `if`.
+
+```{.scheme .feather}
+(define (min a b)
+  (if (< a b) a b))
+
+(min 3 5)
+```
+
+The general form for writing an if expression is:
+
+```
+(if <predicate> <consequent> <alternative>)
+```
+
+If the `<predicate>` is _true_, then the value of the if-expression is the value of `<consequent>`, otherwise it is the value of the `<alternative>`.
+
+Please note that conditional expressions are _expressions_. They can be used to compose other expressions as well.
+
+```{.scheme .feather}
+(define (double-min a b)
+  (* 2 (if (< a b) a b)))
+
+(double-min 3 5)
+```
+
+### logical composition operations
+
+In addition to primitive predicates like `<`, `>` etc., there are logical compostion operators, which enable us to create compound predicates. These are `and`, `or` and `not`.
+
+To see how to use these, lets consider the predicate `even?` defined below.
+
+```{.scheme .feather}
+(define (even? n)
+  (= (remainder n 2) 0))
+
+(even? 4)
+```
+
+What if we want to check if both the given numbers are even?
+
+```{.scheme .feather}
+(define (both-even? a b)
+  (and
+    (even? a)
+    (even? b)))
+
+(both-even? 2 5)
+```
+
+What if we want to check if at least one of them is even?
+
+```{.scheme .feather}
+(define (any-even? a b)
+  (or
+    (even? a)
+    (even? b)))
+
+(any-even? 2 5)
+```
+
+And we can define `odd?` interms of `even?`.
+
+```{.scheme .feather}
+(define (odd? n)
+  (not (even? n)))
+
+(odd? 5)
+```
+
+### Cond
+
+We've seen `if` expressions before, but `if` is actually a specical case of `cond`, a generic conditional expression.
+
+```{.scheme .feather}
+(define (min a b)
+  (cond ((< a b) a)
+        ((= a b) a)
+        ((> a b) b)))
+
+(min 3 5)
+```
+
+Another way to write this is using `else` for the last predicate, to handle the case of all earlier predicates being false.
+
+```{.scheme .feather}
+(define (min a b)
+  (cond ((< a b) a)
+        ((= a b) a)
+        (else b)))
+
+(min 3 5)
+```
+
+**Problem:** Write a function `min3` to compute minimum of three numbers. Can you implement it by reusing the `min` function defined earlier.
+
+```{.scheme .feather}
+(define (min a b)
+  (if (> a b) a b))
+
+(define (min3 a b c)
+  ; Add your implementation here
+  0
+  )
+
+(min3 3 5 7)
+```
