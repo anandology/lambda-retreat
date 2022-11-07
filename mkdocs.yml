@@ -1,0 +1,11 @@
+site_name: The Lambda Retreat
+
+docs_dir: notes
+
+theme: material
+
+plugins:
+    - feather:
+        server_url: https://livecode.pipal.in/
+        modes:
+          - scheme
