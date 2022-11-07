@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Lambda Retreat</title>
 
-    <meta name="title" content="The Lambda Retreat">
-    <meta name="description" content="Immerse into a week long exploration of functional programming, taking many diversions and strange loops!">
+    <meta name="title" property="og:title" content="The Lambda Retreat">
+    <meta name="description" property="og:description" content="Immerse into a week long exploration of functional programming, taking many diversions and strange loops!">
 
     <meta name="twitter:title" content="The Lambda Retreat">
     <meta name="twitter:description" content="Immerse into a week long exploration of functional programming, taking many diversions and strange loops!">
 
-    <meta name="image" content="images/banner.png">
-    <meta name="og:image" content="images/banner.png">
-    <meta name="twitter:image" content="images/banner.png">
+    <meta name="image" property="og:image" content="https://anandology.com/lambda-retreat/images/banner.png">
+    <meta name="og:image" content="https://anandology.com/lambda-retreat/images/banner.png">
+    <meta name="twitter:image" content="https://anandology.com/lambda-retreat/images/banner.png">
 
     <meta name="twitter:card" content="summary_large_image">
 
@@ -136,6 +136,9 @@
                 <a class="navbar-item" href="#instructor">
                   The Instructor
                 </a>
+                <a class="navbar-item" href="#faqs">
+                  FAQs
+                </a>
               </div>
             </div>
           </div>
@@ -198,6 +201,13 @@
               <input class="input" type="email" name="email" placeholder="E-Mail Address">
             </div>
           </div>
+          <div class="field">
+            <label class="label">Website / Github</label>
+            <div class="control">
+              <input class="input" type="text" name="website" placeholder="Website / Github">
+            </div>
+          </div>
+
         </section>
         <footer class="modal-card-foot">
           <button class="button is-primary button-register">Submit</button>
@@ -237,7 +247,7 @@
         </div>
 
         <p>
-        What are the fundamental building blocks of computing? How to understand the computing processes from the first principles? What are the tools and techniques to build complex software and reason about their behavior?
+        What are the fundamental building blocks of computing? How can we understand the computing processes from the first principles? What are the tools and techniques to build complex software and reason about their behavior?
         </p>
 
         <p>
@@ -245,11 +255,15 @@
         </p>
 
         <p>
-        The Lambda Retreat is a week long retreat away from the city, with intense discussions with a small group of people, to study this great work. This immersive workshop not only covers most of the topics from the book, but also includes interesting diversions throughout.
+        The Lambda Retreat is a week-long retreat away from the city, with intense discussions with a small group of people, to study this great work. This immersive workshop not only covers most of the topics from the book, but also includes interesting diversions throughout.
         </p>
 
         <p>
-        To make best use of the time at the retreat, two weeks of prior preperation, with a couple of online sessions per week, is planned before the retreat to get started and pick up a good pace, covering the initial topics of the book.
+        To make best use of the time at the retreat, two weeks of prior preparation, with a couple of online sessions per week, is planned before the retreat to get started and pick up a good pace, covering the initial topics of the book.
+        </p>
+
+        <p>
+        During immersive workshop, you will solve a bunch of non-trivial problems, write programs in multiple programming paradigms, create a couple of programming languages with different semantics and even compile them to webassembly to run them in the browser!
         </p>
 
         <p>
@@ -308,61 +322,114 @@
       <div class="hero-body">
         <h2 class="title" id="schedule">Schedule</h2>
 
-        <h4 class="title is-4">Online Sessions</h4>
+        <h4 class="title is-4">Warm Up</h4>
         <div class="subtitle"><em>Nov 28 - Dec 09, 2022</em></div>
 
-        <p>We'll use the two weeks before the main course to warm up, covering
+        <p>We'll use the two weeks before the main course to get started and pick up a good pace before the retreat, covering
         almost the first two chapters of SICP.
         </p>
 
         <p>There will be online discussions on Tuesdays and Fridays.</p>
-        <br>
 
-        <h4 class="title is-4">Main Course</h4>
-        <div class="subtitle"><em>Dec 11 - Dec 16, 2022 &mdash; in-person</em></div>
+        <p>Some readings and programming exercises will be shared before each
+        session and the participants are expected to complete them before
+        each session.</p>
 
         <div class="session">
-          <div class="session-title">Day 0: Getting Ready</div>
+          <div class="session-title">[Tue Nov 29] Iterative & Recursive Processes</div>
+          <div class="session-details">
+            Discuss sections 1.1 and 1.2 of SICP, covering linear recursion and iteration, tree recursion and orders of growth.
+          </div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">[Fri Dec 02] Higer-Order Functions</div>
+          <div class="session-details">
+            Discuss sections 1.3 of SICP, covering lambda, functions as arguments and functions as return values.
+          </div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">[Tue Dec 06] Building Abstractions with Data</div>
+          <div class="session-details">
+            Discuss sections 2.1 and part of 2.2 of SICP, covering list operations and sequences.
+          </div>
+        </div>
+
+        <div class="session">
+          <div class="session-title">[Fri Dec 09] Hierarchical Structures</div>
+          <div class="session-details">
+            Discuss section 2.2 of SICP, covering hierarchical structures and sequence operators.
+          </div>
+        </div>
+
+        <br>
+
+        <h4 class="title is-4">The Retreat</h4>
+        <div class="subtitle"><em>Dec 11 - Dec 16, 2022</em></div>
+
+        <p>At the retreat, there will be four sessions per day of presentation, live coding and intense discussions.
+        </p>
+
+        <p>Some morning and evening activities are planned every day to make the retreat even more fun.</p>
+
+        <div class="session">
+          <div class="session-title">Day 0 - Sun Dec 11: Getting Ready</div>
           <div class="session-details">
             Reach the venue by Sunday evening. We'll have a small orientation session to prepare you for the deep-dive.
           </div>
         </div>
 
         <div class="session">
-          <div class="session-title">Day 1: Functional Geometry</div>
+          <div class="session-title">Day 1 - Mon Dec 12: Building Abstractions with Data</div>
           <div class="session-details">
-            We'll take a small detour of SICP and do more of the picture language, exploring the world of M. C. Escher.
+            <p>Explores ideas of hierarchical data, multiple representations of data, data encapsulation, types.</p>
+
+            <p>One of the interesting parts of this chapter is <em>A Picture Language</em>, to compose pictures using higher-order operations.
+              We'll take a small detour and explore the works of <a href="https://en.wikipedia.org/wiki/M._C._Escher">M. C. Escher</a>.</p>
           </div>
         </div>
 
         <div class="session">
-          <div class="session-title">Day 2: Messing with State</div>
+          <div class="session-title">Day 2 - Tue Dec 13: Modularity, Objects and State</div>
           <div class="session-details">
-            We'll complete Complete <em>Chapter 3 - Modularity, Objects, and State</em> from SICP.
+            Strategies to structure large programs to make them modular.
+            Two approaches, an object-based approach with mutable state
+            and a stream-processing approach, will be discussed along
+            the issues they bring. We'll also discuss concurrency and
+            the it's conflict with mutable state and the need of serialization.
           </div>
         </div>
 
         <div class="session">
-          <div class="session-title">Day 3: Meta Circular</div>
+          <div class="session-title">Day 4: Meta Linguistic Abstration</div>
           <div class="session-details">
-            <p>The most fun part of SICP, building Scheme in Scheme. We'll build multiple scheme interpreters, with regular and lazy semantics.</p>
-
-            <p>We may also explore adding lazy evaluation to Python, if time permits.</p>
+            <q>As we confront increasingly complex problems, any fixed
+              programming language is not suffient for our needs. We must
+              constantlty turn to new languages in order to express our
+              ideas more expressively.
+            </q>
+            <p>We'll learn how to construct evaluators for a bunch of
+              programming languages with different semantics. This includes
+              a scheme interpreter written in scheme, an interprerer with
+              lazy evaluation, and an interprerer with support for non-determinism.</p>
           </div>
         </div>
 
         <div class="session">
-          <div class="session-title">Day 4: The Machine</div>
+          <div class="session-title">Day 4: The Assembly</div>
           <div class="session-details">
-            <p>The last chapter of SICP discuss about compling the code to a register machine. We'll take a detour and build a compiler for webassembly!</p>
+            <p>The last chapter of SICP is <em>Computing with Register Machines</em>, covering simulating a register machine and writing a compiler to translate scheme programs to be executed on the register machines.</p>
+            <p>We'll take a detour and create a simulator for web assembly, build a scheme compiler for webassembly, and run it a browser!</p>
           </div>
         </div>
 
         <div class="session">
-          <div class="session-title">Day 5: Higher & Beyond</div>
+          <div class="session-title">Day 5: Beyond SICP</div>
           <div class="session-details">
-            <p>We'll discuss about how all these ideas can be put into practice, looking at interesting projects around. May be build something together?</p>
-            <p>The session will be wrapped up by 3PM and everyone leaves back.</p>
+            <p>The SICP book covers many interesting ideas, but how do we put them into practice?</p>
+            <p>Can we build systems that are highly extensible, where the end users can extend and even possibly modify every aspect of the system?</p>
+            <p>We'll discuss a couple of case studies and explore the challenges and possibilities.</p>
           </div>
         </div>
       </div>
@@ -379,7 +446,7 @@
         </figure>
 
         <p>
-          Anand started his career with writing a garbage collector
+          Anand started his career writing a garbage collector
           for an implementation of scheme and the spirit of SICP stayed
           with him ever since.
         </p>
@@ -387,18 +454,29 @@
         <p>As someone who loves simplicity and likes to approach things
           from first principles, he was naturally attracted to ideas of
           functional programming. Some of his works include a Python to
-          Javascript translator, a python 3 interpreter in Racket,
+          Javascript translator, a Python 3 interpreter in Racket,
           exploring Escher's tessallations with code, among many others.
         </p>
 
         <p>Over his long career, spanning over two decades, he
           co-authored web.py - a micro web framework in Python,
           built Open Library at the Internet Archive, created Joy -
-          a creative coding library in Python,
+          a creative coding library in Python, and
           trained hundreds of engineers through his deep-dive courses.
         </p>
       </div>
     </section>
+
+    <section class="hero is-section">
+      <div class="hero-body">
+        <h2 class="title" id="faqs">FAQs</h2>
+
+        <em>Coming soon!</em>
+
+      </div>
+    </section>
+
+
 
     <script type="text/javascript">
 document.addEventListener('DOMContentLoaded', () => {
@@ -459,6 +537,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const $target = $btn.closest('.modal');
     const $full_name = document.querySelector("#modal-register input[name=full_name]");
     const $email = document.querySelector("#modal-register input[name=email]");
+    const $website = document.querySelector("#modal-register input[name=website]");
 
     $btn.addEventListener('click', () => {
       closeModal($target);
@@ -466,6 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
       var data = {
         full_name: $full_name.value,
         email: $email.value,
+        website: $website.value
       };
 
       fetch("https://engage.pipal.in/api/method/lambda-retreat-register", {
