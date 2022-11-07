@@ -5,4 +5,7 @@ build:
 	mkdocs build
 
 deploy:
-	ssh anandology.com bash -c 'cd lambda-retreat && git pull && make build'
+	ssh -A anandology.com make --directory lambda-retreat git-pull build
+
+git-pull:
+	git pull
