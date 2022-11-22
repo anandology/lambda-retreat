@@ -9,3 +9,5 @@ plugins:
         server_url: https://livecode.pipal.in/
         modes:
           - scheme
+          - wast
+          - javascript
