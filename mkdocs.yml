@@ -11,3 +11,4 @@ plugins:
           - scheme
           - wast
           - javascript
+          - python

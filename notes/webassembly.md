@@ -130,6 +130,41 @@ WebAssembly.instantiate(buf).then(mod => {
 });
 ```
 
+## Exercise: Python in the Browser
+
+The goal of this exercise is to write a program that generates webassembly for given python code and execute it from the browser.
+
+For simplicity, we'll limit ourselves to only integers and functions in Python.
+
+Consider the following example:
+
+```{.python .feather}
+def square(x):
+    y = x*x
+    return y
+```
+
+How does Python execute this code? Python compiles this into bytecode
+to run on the Python virtual machine. Surprisingly, the Python virtual
+machine is stack based, just like webassembly!
+
+You can see the bytecode using the `dis` module.
+
+```{.python .feather}
+def square(x):
+    y = x*x
+    return y
+
+import dis
+dis.dis(square)
+```
+
+As you can see the Python bytecode is very similar to the webassembly.
+Your task is to take a python code as input and generate corresponding
+webassembly and run it from the browser.
+
+Starter code for this problem will be shared with you in a repository.
+
 
 ## References
 
