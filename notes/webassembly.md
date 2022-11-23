@@ -3,6 +3,8 @@
 WebAssembly is an instruction format for a stack-based virtual machine,
 that runs with near-native performance and supported by all modern browsers.
 
+*Warning: This article is still work-in-progress and will be expanded with more examples and explanation shortly.*
+
 ## Example: add
 
 Here is an example of webassembly program to implement a function `add`.
@@ -159,7 +161,6 @@ import dis
 dis.dis(square)
 ```
 
-As you can see the Python bytecode is very similar to the webassembly.
 Your task is to take a python code as input and generate corresponding
 webassembly and run it from the browser.
 
