@@ -1,0 +1,10 @@
+title: Newton’s method for cube roots 
+blurb: Implement a cube-root procedure using Newton's method.
+runtime: scheme
+files:
+  code:
+    - cuberoot.scm
+  test:
+    - test_cuberoot.py
+  solution:
+    - solution/cuberoot.scm
