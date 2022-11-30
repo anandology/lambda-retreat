@@ -1,10 +1,9 @@
 title: Cube
 blurb: Write a function to compute cube of a number.
-#runtime: scheme
+runtime: scheme
 files:
   code:
     - cube.scm
-    - main.py
   test:
     - test_cube.py
   solution:
