@@ -12,9 +12,14 @@ def parse(code):
                 result.append(parse_node())
             tokens = tokens[1:]
             return result
+        elif current.isdigit():
+            tokens = tokens[1:]
+            return int(current)
         else:
             tokens = tokens[1:]
             return current
 
     tokens = tokenize(code)
     return parse_node()
+
+print(parse("(+ 1 2)"))
