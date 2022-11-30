@@ -2,3 +2,5 @@ site/
 .ipynb_checkpoints/
 .swp
 venv/
+__pycache__/
+*.pyc
