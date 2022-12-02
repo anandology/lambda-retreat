@@ -1,0 +1,10 @@
+title: Exercise 1.11
+blurb: Exercise 1.11 from SICP
+runtime: scheme
+files:
+  code:
+    - ex111.scm
+  test:
+    - test_ex111.py
+  solution:
+    - solution/ex111.scm
