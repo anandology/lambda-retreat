@@ -1,0 +1,10 @@
+title: E1.16 - Iterative fast-expt
+blurb: "Exercise 1.16: Implement a version of fast-expt that evolves into an iterative process."
+runtime: scheme
+files:
+  code:
+    - fast-expt.scm
+  test:
+    - test_fast_expt.py
+  solution:
+    - solution/fast-expt.scm
