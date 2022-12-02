@@ -1,0 +1,9 @@
+title: Iterative Sum
+blurb: Write a sum procedure that generates a iterative process.
+files:
+  code:
+    - sum.scm
+  test:
+    - test_sum.py
+  solution:
+    - solution/sum.scm
