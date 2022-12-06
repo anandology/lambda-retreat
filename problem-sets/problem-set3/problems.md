@@ -156,9 +156,9 @@ Can you help her by implementing the `iterative-process` procedure?
 
 **Problem 3** Rewrite the procudure `f` from the Exercise 1.11 using `iterative-process`.
 
-**Problem 4** Can you rewrite the following implementation of `expt` from Chapter 1.2 of SICP using `iterrative-process`.
+**Problem 4** Can you rewrite the following implementation of `expt` from Chapter 1.2 of SICP using `iterative-process`.
 
-```
+```scheme
 (define (expt b n)
   (expt-iter b n 1))
 
