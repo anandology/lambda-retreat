@@ -142,6 +142,8 @@ Alyssa P. Hacker got really excited after seeing the elegance of the
         (lambda (a b) (list (+ a b) a))))
 ```
 
+The `last` procedure takes a list and returns the last element from it.
+
 That seemed like a lot more code than what she started with. Determined to make it better, she came up with the following plan.
 
 ```scheme
@@ -153,6 +155,8 @@ That seemed like a lot more code than what she started with. Determined to make 
 ```
 
 Can you help her by implementing the `iterative-process` procedure?
+
+Please note that you may have to implement the `last` procedure as well.
 
 **Problem 3** Rewrite the procudure `f` from the Exercise 1.11 using `iterative-process`.
 
