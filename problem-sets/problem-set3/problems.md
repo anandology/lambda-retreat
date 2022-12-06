@@ -94,10 +94,10 @@ If you notice, even implementation of `expt-iter` follows the same pattern.
 The general pattern seems to be:
 
 ```scheme
-(define (foo-iter n a b ...))
+(define (foo-iter n a b ...)
     (if (= n 0)
         <last-of-a-b-...>
-        (foo-iter (- n 1) <updated-values-of-a-b...> )))
+        (foo-iter (- n 1) updated-values-of-a-b...> )))
 ```
 
 Alyssa P. Hacker wasn't happy with this duplication and wanted to see if she can generalize it. She came up with the following idea.
@@ -114,7 +114,7 @@ The part that is changing between the implementaions is how the values are getti
 
 If there is a function `(repeat n args f)` that applies `f` to `args` n times.
 
-```
+```scheme
 (repeat fib-updater 0 (list 1 0)) ; (1 0)
 (repeat fib-updater 1 (list 1 0)) ; (1 1)
 (repeat fib-updater 6 (list 1 0)) ; (13 8)
