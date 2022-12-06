@@ -5,13 +5,13 @@ This problem set uses the concepts of dotted-tail notation and `apply` function.
 
 ## Dotted-tail notation
 
-When defining a proceduce in Scheme, we can specify that a function can accept multiple arguments (variadic) using `dotted-tail` notation.
+When defining a procedure in Scheme, we can specify that a function can accept multiple arguments (variadic) using `dotted-tail` notation.
 
 ```scheme
 (define (f . args) args)
 ```
 
-When the proceduce is called with zero or more arguments, all the arguments will be available as a list.
+When the procedure is called, all the arguments will be available as a list.
 
 It is equivalant to the following in Python:
 
@@ -100,11 +100,11 @@ The general pattern seems to be:
         (foo-iter (- n 1) <updated-values-of-a-b...> )))
 ```
 
-Alyssa P. Hacker wasn't happy with this duplication and wanted to see if he can generalize it. She came up with the following idea.
+Alyssa P. Hacker wasn't happy with this duplication and wanted to see if she can generalize it. She came up with the following idea.
 
 The part that is changing between the implementaions is how the values are getting updated. These can be abstracted as:
 
-```
+```scheme
 (define (fib-updater a b)
     (list (+ a b) a))
 
@@ -112,7 +112,7 @@ The part that is changing between the implementaions is how the values are getti
     (list (+ a (* 2 b) (* 3 c)) a b)
 ```
 
-If there is a function `(repeat f n args)` that applies `f` to `args` n times.
+If there is a function `(repeat n args f)` that applies `f` to `args` n times.
 
 ```
 (repeat fib-updater 0 (list 1 0)) ; (1 0)
