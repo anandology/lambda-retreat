@@ -5,7 +5,9 @@
 4
 ```
 
-**Problem 2:** Define procedure `reverse` that takes a list as argument and returns a list with the same elements in reverse order.
+**Problem 2:** _Exercise 2.18 from SICP_
+
+Define procedure `reverse` that takes a list as argument and returns a list with the same elements in reverse order.
 
 ```scheme
 (reverse (list 1 2 3 4))
@@ -27,9 +29,9 @@ Here is the implementation from the book.
             (map proc (cdr items)))))
 ```
 
-**Problem 4:** Define a procedure `flatten` that takes a tree as argument and returns a list whose values are all the leaves of the tree arranged in left-to-right order.
+**Problem 4:** _Exercise 2.28 from SICP_
 
-This is Excercise 2.28 from SICP.
+Define a procedure `flatten` that takes a tree as argument and returns a list whose values are all the leaves of the tree arranged in left-to-right order.
 
 ```
 (define x (list (list 1 2) (list 3 4)))
@@ -38,7 +40,9 @@ This is Excercise 2.28 from SICP.
 (1 2 3 4)
 ```
 
-**Problem 5:** Define a procedure `tree-map` that takes a proceduce and a tree as arguments and applies the function to every leaf of the tree and returns a new tree.
+**Problem 5:** _Exercise 2.31 from SICP_
+
+Define a procedure `tree-map` that takes a proceduce and a tree as arguments and applies the function to every leaf of the tree and returns a new tree.
 
 ```scheme
 (define (square-tree tree)
@@ -87,7 +91,9 @@ Make approprite changes to the procedure to accommodate this. For your reference
         ((= kinds-of-coins 5) 50)))
 ```
 
-**Problem 7:** _Exercise 2.33 from SICP_
+**Problem 7:** _Exercise 2.27 from SICP_
+
+**Problem 8:** _Exercise 2.33 from SICP_
 
 Fill in the missing expressions to complete the following definitions of some basic list-manipulation operations as accumulations:
 
