@@ -93,6 +93,22 @@ Make approprite changes to the procedure to accommodate this. For your reference
 
 **Problem 7:** _Exercise 2.27 from SICP_
 
+Modify your `reverse` procedure of Problem 2 / Exercise 2.18 to produce a `deep-reverse` procedure that takes a list as argument and returns as its value the list with its elements reversed and with all sublists deep-reversed as well. For example,
+
+```
+(define x
+  (list (list 1 2) (list 3 4)))
+
+x
+((1 2) (3 4))
+
+(reverse x)
+((3 4) (1 2))
+
+(deep-reverse x)
+((4 3) (2 1))
+```
+
 **Problem 8:** _Exercise 2.33 from SICP_
 
 Fill in the missing expressions to complete the following definitions of some basic list-manipulation operations as accumulations:
