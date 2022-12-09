@@ -7,7 +7,7 @@ It simplifies expressions like `(+ 0 x)` and `(* 1 x)` etc., but it does not con
 
 Extend the implementation of `simplify` to support that.
 
-````
+```
 simplify(`(+ x x))
 (* 2 x)
 
