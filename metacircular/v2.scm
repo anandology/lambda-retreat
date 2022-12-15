@@ -33,7 +33,7 @@
           (extend-env
            (procedure-parameters proc)
            arguments
-           env)))
+           (procedure-env proc))))
         (else
          (error "APPLY - unknown procedure type" proc))))
 
