@@ -2,6 +2,7 @@
 (define python builtins)
 
 (define (eval exp env)
+;;   (python.print "eval" exp (repr-env env))
   (cond ((self-evaluating? exp) 
          exp)
         ((variable? exp) 
@@ -111,7 +112,7 @@
 
 (define (lookup-frame var frame)
   (define (scan vars vals)
-    (cond [(null? vars) #f]
+    (cond [(null? vars) '<notfound>]
           [(eq? (car vars) var)
            (car vals)]
           [else (scan (cdr vars) (cdr vals))]))
@@ -173,11 +174,12 @@
     (cons frame env)))
 
 (define (lookup-variable-value var env)
+;;   (python.print "lookup-variable-value" var (repr-env env))
   (if (empty-env? env)
       (error "Unbound variable" (symbol->string var))
       (let [(frame (top-frame env))]
         (let [(val (lookup-frame var frame))]
-          (if (eq? val #f)
+          (if (eq? val '<notfound>)
               (lookup-variable-value var (enclosing-env env))
               val)))))
       
@@ -191,17 +193,23 @@
     (if (not (eq? val '<void>))
         (python.print val)))) 
 
-(try-eval '1)
-(try-eval 'x)
-(try-eval '(quote x))
-(try-eval '(define a 10))
-(try-eval 'a)
-(try-eval '(if #t 10 20))
-(try-eval '(if #f 10 20))
-(try-eval '(+ 4 5))
-(try-eval '(lambda () 4))
-(try-eval '(lambda (x) (+ x 1)))
-(try-eval '(define f (lambda (x) (+ x 1))))
-(try-eval '(f 4))
+(define (repr-env env)
+  (map repr-frame env))
+
+(define (repr-frame frame)
+  (car frame))
+
+;; (try-eval '1)
+;; (try-eval 'x)
+;; (try-eval '(quote x))
+;; (try-eval '(define a 10))
+;; (try-eval 'a)
+;; (try-eval '(if #t 10 20))
+;; (try-eval '(if #f 10 20))
+;; (try-eval '(+ 4 5))
+;; (try-eval '(lambda () 4))
+;; (try-eval '(lambda (x) (+ x 1)))
+;; (try-eval '(define f (lambda (x) (+ x 1))))
+;; (try-eval '(f 4))
 (try-eval '(define fact (lambda (n) (if (= n 0) 1 (* n (fact (- n 1)))))))
 (try-eval '(fact 5))
