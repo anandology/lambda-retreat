@@ -1,0 +1,3 @@
+(module (func $A (param $x i32) (param $y i32) (result i32) (if (result i32) (i32.eq (local.get $y) (i32.const 0)) (then (i32.const 0)) (else (if (result i32) (i32.eq (local.get $x) (i32.const 0)) (then (i32.mul (i32.const 2) (local.get $y))) (else (if (result i32) (i32.eq (local.get $y) (i32.const 1)) (then (i32.const 2)) (else (call $A (i32.sub (local.get $x) (i32.const 1)) (call $A (local.get $x) (i32.sub (local.get $y) (i32.const 1)))))))))))
+(export "A" (func $A))
+)

@@ -1,0 +1,16 @@
+<h1>Square</h1>
+
+<script type="text/javascript">
+const importObject = {
+    log(n) {
+        console.log(n);
+    }
+};
+fetch("square.wasm")
+  .then((response) => response.arrayBuffer())
+  .then((bytes) => WebAssembly.instantiate(bytes, importObject))
+  .then((results) => {
+    var sq = results.instance.exports.square(4);
+    console.log(sq);
+  });
+</script>

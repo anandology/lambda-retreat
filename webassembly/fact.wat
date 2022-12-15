@@ -1,0 +1,1 @@
+(module (func $fact (param $n i32) (result i32) (if (result i32) (i32.eq (local.get $n) (i32.const 0)) (then (i32.const 1)) (else (i32.mul (local.get $n) (call $fact (i32.sub (local.get $n) (i32.const 1))))))) (export "fact" (func $fact)))
